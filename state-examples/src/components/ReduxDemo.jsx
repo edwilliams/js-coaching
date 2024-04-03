@@ -10,25 +10,16 @@ const ReduxDemo = () => {
   return (
     <div>
       <Link to="/">Home</Link>
-      <button
-        aria-label="Increment value"
-        onClick={() => dispatch(incrementByAmount(10))}
-      >
+
+      <button onClick={() => dispatch(incrementByAmount(10))}>
         Increment by 10
       </button>
-      <button
-        aria-label="Increment value"
-        onClick={() => dispatch(increment())}
-      >
-        Increment
-      </button>
+
+      <button onClick={() => dispatch(increment())}>Increment</button>
+
       <span>{count}</span>
-      <button
-        aria-label="Decrement value"
-        onClick={() => dispatch(decrement())}
-      >
-        Decrement
-      </button>
+
+      <button onClick={() => dispatch(decrement())}>Decrement</button>
     </div>
   )
 }

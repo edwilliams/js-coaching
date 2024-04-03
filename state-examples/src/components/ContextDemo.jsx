@@ -6,6 +6,7 @@ import { useUser } from "../providers/UserProvider"
 const ContextDemo = () => {
   const refName = useRef()
   const refAge = useRef()
+  const refStreet = useRef()
   const { greeting } = useLabels()
   const { userData, updateUser } = useUser()
 
@@ -14,6 +15,9 @@ const ContextDemo = () => {
       <Link to="/">Home</Link>
       <p>
         {greeting}. Name is {userData.name} and age is {userData.age}
+      </p>
+      <p>
+        Address is {userData.address.street}, {userData.address.postCode}
       </p>
       <input type="text" ref={refName} />
       <button
@@ -29,6 +33,17 @@ const ContextDemo = () => {
         onClick={() => updateUser({ key: "age", val: refAge.current.value })}
       >
         update age
+      </button>
+
+      <br />
+
+      <input type="text" ref={refStreet} />
+      <button
+        onClick={() =>
+          updateUser({ key: "address.street", val: refStreet.current.value })
+        }
+      >
+        update street
       </button>
     </div>
   )
